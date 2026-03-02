@@ -48,8 +48,7 @@ Create a Python script to monitor devices in the local network, collect latency 
 ![Phase 1 Terminal Output](docs/phase1_terminal.png)
 
 ## Challenges & Notes
-- Latency extraction works for both English and Portuguese Windows ping output  
-- Status is marked as `DOWN` only if latency could not be measured  
+- Latency extraction works for both English and Portuguese Windows ping output   
 - A latency value of 0ms may occur in extremely fast local networks but may also indicate parsing issues. If incorrectly interpreted as `DOWN`, this could generate false alerts. Future versions may include stricter validation logic.
 
 ## How To Run (Version 1)
