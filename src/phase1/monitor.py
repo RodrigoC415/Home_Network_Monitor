@@ -1,6 +1,6 @@
 import time
-from collector.ping import ping_device
-from database.storage import write_csv
+from ping import ping_device
+from storage import write_csv
 
 # Devices to monitor
 devices = {

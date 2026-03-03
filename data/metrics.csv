@@ -62,3 +62,15 @@ timestamp,device_name,latency_ms,status
 2026-03-02 15:45:59,Primary Router,2,UP
 2026-03-02 15:45:59,Secondary Router,1,UP
 2026-03-02 15:45:59,Internet Test,20,UP
+2026-03-02 17:13:22,Primary Router,2,UP
+2026-03-02 17:13:22,Secondary Router,1,UP
+2026-03-02 17:13:23,Internet Test,20,UP
+2026-03-02 17:13:53,Primary Router,2,UP
+2026-03-02 17:13:53,Secondary Router,1,UP
+2026-03-02 17:13:53,Internet Test,19,UP
+2026-03-03 14:28:23,Primary Router,2,UP
+2026-03-03 14:28:23,Secondary Router,5,UP
+2026-03-03 14:28:23,Internet Test,20,UP
+2026-03-03 14:28:53,Primary Router,2,UP
+2026-03-03 14:28:53,Secondary Router,2,UP
+2026-03-03 14:28:53,Internet Test,22,UP
