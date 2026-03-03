@@ -74,3 +74,6 @@ timestamp,device_name,latency_ms,status
 2026-03-03 14:28:53,Primary Router,2,UP
 2026-03-03 14:28:53,Secondary Router,2,UP
 2026-03-03 14:28:53,Internet Test,22,UP
+2026-03-03 14:29:33,Primary Router,2,UP
+2026-03-03 14:29:33,Secondary Router,4,UP
+2026-03-03 14:29:33,Internet Test,19,UP
