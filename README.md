@@ -16,9 +16,9 @@ The objective is to creat historic data to analyse the performance of the networ
 - 8.8.8.8 (internet connectivity test)
 
 ## Table of Contents
-- [Phase 1 – CSV Monitoring](#phase-1--csv-monitoring)
-- [Phase 2 – Database Integration](#phase-2--database-integration)
-- [Phase 3 (Final) – Network Visualization with Grafana](#phase-3--network-visualization-with-grafana)
+- [Phase 1 - CSV Monitoring](#phase-1--csv-monitoring)
+- [Phase 2 - Database Integration](#phase-2--database-integration)
+- [Phase 3 (Final) - Network Visualization with Grafana](#phase-3--network-visualization-with-grafana)
 
 # Phase 1 - Basic Network Monitoring
 
