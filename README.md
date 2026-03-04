@@ -36,12 +36,12 @@ Create a Python script to monitor devices in the local network, collect latency 
 - Data is stored in `metrics.csv` for historical tracking  
 
 ## Implementation
-- **`ping.py`** – Function `ping_device(ip)` pings a device and returns:
+- **`ping.py`** - Function `ping_device(ip)` pings a device and returns:
   - Timestamp
   - Latency (ms)
   - Status (`UP` / `DOWN`)
-- **`storage.py`** – Function `write_csv(file_path, data)` writes results to CSV, creating the file with header if it does not exist
-- **`monitor.py`** – Loops through devices, calls `ping_device()`, writes results to CSV, and prints output to terminal
+- **`storage.py`** - Function `write_csv(file_path, data)` writes results to CSV, creating the file with header if it does not exist
+- **`monitor.py`** - Loops through devices, calls `ping_device()`, writes results to CSV, and prints output to terminal
 
 ## Results
 
@@ -80,15 +80,15 @@ Upgrade the monitoring system by replacing CSV storage with a PostgreSQL databas
 - Data is stored in the `metrics` table inside the PostgreSQL database for persistent historical tracking  
 
 ## Implementation
-- **`ping.py`** – Function `ping_device(ip)` pings a device and returns:
+- **`ping.py`** - Function `ping_device(ip)` pings a device and returns:
   - Timestamp  
   - Latency (ms)  
   - Status (`UP` / `DOWN`)  
-- **`database.py`** – Contains the `Database` class:
+- **`database.py`** - Contains the `Database` class:
   - `__init__()` establishes connection to PostgreSQL  
   - `insert_metric(timestamp, device, latency, status)` inserts monitoring records into the `metrics` table  
   - `close()` safely closes the database connection  
-- **`monitor.py`** – Updated monitoring loop:
+- **`monitor.py`** - Updated monitoring loop:
   - Creates a `Database` object  
   - Calls `insert_metric()` instead of writing to CSV  
   - Maintains continuous monitoring and prints output to terminal  
