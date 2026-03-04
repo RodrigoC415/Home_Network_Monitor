@@ -120,3 +120,97 @@ CREATE TABLE metrics (
 5. Check that the IP addresses in `monitor.py` match your local network
 3. Run the monitoring script: python monitor.py
 6. Update PostgreSQL credentials inside database.py if needed
+
+
+# Phase 3 – Network Visualization with Grafana
+
+## Objective
+Enhance the monitoring system by adding real-time data visualization using Grafana.
+
+This phase builds directly on Phase 2.  
+The data collection and database architecture remain unchanged.
+
+The goal of this phase is to transform raw monitoring data into meaningful performance insights.
+
+## Dashboard Example
+
+![Phase 3 Dashboard](docs/phase3_dashboard.png)
+
+## Dashboard Overview
+
+Grafana connects directly to the PostgreSQL `metrics` table and executes custom SQL queries to generate real-time panels.
+
+### Main Panels
+
+### 1. Uptime Percentage
+Displays availability percentage per device.
+
+- Quick health overview
+- Based on ratio of `UP` vs total checks
+
+### 2. Latency Over Time
+Time-series graphs for:
+- Primary Router
+- Secondary Router
+- Internet Test
+
+Allows:
+- Detection of spikes
+- Trend analysis
+- Stability comparison
+
+### 3. Latency Distribution (P95 / P05)
+
+Instead of using maximum latency, the system calculates:
+
+- 95th percentile latency (P95)
+- 5th percentile latency (P05)
+
+This avoids distortion from isolated spikes and provides a statistically representative performance metric.
+
+Example query:
+
+```sql
+SELECT
+  device_name AS "Device",
+  percentile_cont(0.95) WITHIN GROUP (ORDER BY latency_ms) AS "95th Percentile Latency (ms)",
+  percentile_cont(0.05) WITHIN GROUP (ORDER BY latency_ms) AS "5th Percentile Latency (ms)"
+FROM metrics
+WHERE latency_ms IS NOT NULL
+GROUP BY device_name
+ORDER BY
+  CASE
+    WHEN device_name = 'Primary Router' THEN 1
+    WHEN device_name = 'Secondary Router' THEN 2
+    WHEN device_name = 'Internet Test' THEN 3
+    ELSE 4
+```
+
+### 4. Device Failures Table
+Displays historical `DOWN` events.
+
+Enables:
+- Incident tracking
+- Instability detection
+- Correlation with latency spikes
+
+## Technical Improvements Introduced
+
+- Use of statistical percentiles instead of raw maximum values
+- Real-time SQL-driven visualization
+- Cleaner interpretation of network behaviour
+
+## Conclusion
+
+Phase 3 completes the monitoring pipeline:
+
+Data Collection → Storage → Visualization → Insight
+
+The system now provides:
+
+- Real-time monitoring
+- Historical performance tracking
+- Statistical latency evaluation
+- Failure logging
+
+This phase elevates the project from a data logger to a complete monitoring solution.
