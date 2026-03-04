@@ -15,8 +15,12 @@ The objective is to creat historic data to analyse the performance of the networ
 - Secondary Router
 - 8.8.8.8 (internet connectivity test)
 
+## Table of Contents
+- [Phase 1 – CSV Monitoring](#phase-1--csv-monitoring)
+- [Phase 2 – Database Integration](#phase-2--database-integration)
+- [Phase 3 (Final) – Network Visualization with Grafana](#phase-3--network-visualization-with-grafana)
 
-# Phase 1 – Basic Network Monitoring
+# Phase 1 - Basic Network Monitoring
 
 ## Objective
 Create a Python script to monitor devices in the local network, collect latency and availability data, and store it in a CSV file.
@@ -60,7 +64,7 @@ Create a Python script to monitor devices in the local network, collect latency 
 5. Stop monitoring anytime with Ctrl+C.
 
 
-# Phase 2 – Database Integration (PostgreSQL)
+# Phase 2 - Database Integration (PostgreSQL)
 
 ## Objective
 Upgrade the monitoring system by replacing CSV storage with a PostgreSQL database to enable structured data persistence, advanced querying, and future dashboard integration.
@@ -122,7 +126,7 @@ CREATE TABLE metrics (
 6. Update PostgreSQL credentials inside database.py if needed
 
 
-# Phase 3 – Network Visualization with Grafana
+# Phase 3 - Network Visualization with Grafana
 
 ## Objective
 Enhance the monitoring system by adding real-time data visualization using Grafana.
